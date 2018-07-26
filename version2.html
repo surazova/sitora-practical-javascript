@@ -1,0 +1,134 @@
+Practical Javascript Version 2: 
+-You can customize your functions 
+
+function makeTurkeySandwich (){
+
+}
+
+makeSandwichWith _______
+    Get one slice of bread. 
+    Add _______. 
+    Put a slice of bread on top. 
+    
+function makeSandwichWith(filling) {
+    Get one slice of bread; 
+    Add filling; 
+    Put a slice of bread on top; 
+}
+
+makeSandwichWith('ham')
+Console.log('ham')
+
+More on Customizing Functions:
+
+function sayHiTo(person) {
+    console.log('hi', person);
+}
+sayHiTo('sitora')
+VM642:2 hi sitora
+sayHiTo('Sitora') // person = 'Sitora'
+
+V2 Requirements:
+
+1. It should have a function to display todos
+
+var todos = ['item 1', 'item 2', 'item 3'] 
+undefined
+function displayTodos() {
+console.log('My todos:', todos);
+}
+displayTodos 
+My todos = ['item 1', 'item 2', 'item 3']
+
+2. Function to add todos
+(3) ["item 1", "item 2", "item 3"]
+displayTodos
+ƒ displayTodos() {
+
+console.log('My todos:' , todos);
+}
+displayTodos()
+VM58:3 My todos: (3) ["item 1", "item 2", "item 3"]
+undefined
+function addTodo() {
+	todos.push('new todo');
+}
+undefined
+addTodo()
+undefined
+todos
+(4) ["item 1", "item 2", "item 3", "new todo"]
+displayTodos()
+VM58:3 My todos: (4) ["item 1", "item 2", "item 3", "new todo"]
+undefined
+addTodo()
+undefined
+displayTodos()
+VM58:3 My todos: (5) ["item 1", "item 2", "item 3", "new todo", "new todo"]
+undefined
+function addTodo() {
+	todos.push('new todo');
+	displayTodos();
+}
+undefined
+addTodo()
+VM58:3 My todos: (6) ["item 1", "item 2", "item 3", "new todo", "new todo", "new todo"]
+undefined
+function addTodo(todo) {
+	todos.push(todos);
+	displayTodos();
+}
+undefined
+addTodo ('helllo there')
+VM58:3 My todos: (7) ["item 1", "item 2", "item 3", "new todo", "new todo", "new todo", Array(7)]
+
+3. Change a todos 
+
+function addTodo(todo) {
+	todos.push(todos);
+	displayTodos();
+}
+
+
+undefined
+function changeTodo(position, newValue) {
+	todos[position] = newValue;
+}
+undefined
+displayTodos()
+VM58:3 My todos: (7) ["item 1", "item 2", "item 3", "new todo", "new todo", "new todo", Array(7)]
+undefined
+changeTodo(0, 'changed')
+undefined
+displayTodos()
+VM58:3 My todos: (7) ["changed", "item 2", "item 3", "new todo", "new todo", "new todo", Array(7)]
+undefined
+function changeTodo(position, newValue) {
+	todos[position] = newValue;
+	displayTodos();
+}
+undefined
+displayTodos()
+VM58:3 My todos: (7) ["changed", "item 2", "item 3", "new todo", "new todo", "new todo", Array(7)]
+undefined
+changeTodo(0, 'changed again')
+VM58:3 My todos: (7) ["changed again", "ite
+
+4. Delete a todos 
+
+function deleteTodo(position) {
+    todos.splice(position, 1);
+displayTodos();
+}
+undefined
+displayTodos()
+VM58:3 My todos: (7) ["changed again", "item 2", "item 3", "new todo", "new todo", "new todo", Array(7)]
+undefined
+deleteTodo(0)
+VM58:3 My todos: (6) ["item 2", "item 3", "new todo", "new todo", "new todo", Array(6)]
+undefined
+deleteTodo(2)
+VM58:3 My todos: (5) ["item 2", "item 3", "new todo", "new todo", Array(5)]
+undefined
+deleteTodo(2)
+VM58:3 My todos: (4) ["item 2", "item 3", "new todo", Array(4)]
